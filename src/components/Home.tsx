@@ -32,7 +32,6 @@ export default function Home() {
       if(response.ok) {
         const results = await response.json();
         setSongs(results);
-        console.log(songs);
       }
     } catch (error) {
       console.log(error);
@@ -41,11 +40,11 @@ export default function Home() {
 
   return (
     <Container className="mt-5">
-    <h1 className="text-center formText">Music Finder</h1>
+    <h1 className="text-center text-white text-monospace">Music Finder</h1>
     <Row className="justify-content-center">
     <Form className="mt-2" style={{width:"50vw", marginBottom: "3rem"}}>
       <Form.Group>
-        <Form.Control type="text" placeholder="Search for music" value={searchValue} onChange={(e) => {setSearchValue(e.target.value)}} />
+        <Form.Control style={{backgroundColor: "black", border: "none", borderBottom: "1px solid #138496", borderBottomLeftRadius: "0", borderBottomRightRadius: "0", height: "3rem", boxShadow: "none", fontSize: "2rem", color: "white", fontFamily: "monospace"}} type="text" placeholder="Search for music" value={searchValue} onChange={(e) => {setSearchValue(e.target.value)}} />
       </Form.Group>
     </Form>
     </Row>
